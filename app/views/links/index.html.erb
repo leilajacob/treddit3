@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-  <h1>Listing Links&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to 'New Link', new_link_path, class: "btn btn-info" %></h1>
+  <h1>Listing Links</h1>
     <% @links.each do |link| %>
 
         <div class="well">
@@ -21,9 +21,7 @@
           </p>
         </div>
 
-
-          <div><H1><%= link_to link.name.downcase.capitalize, link.link %></h1>&nbsp&nbsp&nbsp<%= link_to 'Edit', edit_link_path(link) %>&nbsp&nbsp&nbsp<%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td></div>
-
+          <div><h1><%= image_tag link.avatar.url(:thumb) %>&nbsp&nbsp&nbsp<%= link_to link.name.downcase.capitalize, link.link %></h1><%= link_to 'Edit', edit_link_path(link) %>&nbsp&nbsp&nbsp<%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td></div>
       </div>
 
   <% end %>
