@@ -4,7 +4,7 @@
 
 <div class="row">
     <% @links.each do |link| %>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="well">
         <td><%= link_to link.name.downcase.capitalize, link.link %></td>
         <td><%= link.score %></td>
