@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  devise_for :users
   root 'links#index'
 
   get 'upvote' => 'votes#upvote'
