@@ -7,20 +7,28 @@
       <div class="col-md-12">
         <div class="well">
 
-          <p><%= link.score %></p> 
-
+         <div id="float-left">
+          <p>
           <%= link_to upvote_path(id: link.id) do %>
           <span class="glyphicon glyphicon-plus"></span>
           <% end %>
-
+          </p>
+          <p>
+          <%= link.score %>
+          </p>
+          <p>
           <%= link_to downvote_path(id: link.id) do %> 
           <span class="glyphicon glyphicon-minus"></span>
           <% end %>
+          </p>
+        </div>
 
-        <td><%= link_to link.name.downcase.capitalize, link.link %></td>
+        <div if="float-right">
+        <H1><%= link_to link.name.downcase.capitalize, link.link %></H1>
         
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </div>
         </div>
       </div>
     <% end %>
